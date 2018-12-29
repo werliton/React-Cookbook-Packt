@@ -9,10 +9,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header title="Welcome to Codejobs" url=""/>
-        <Content>
-            <Todo />
-        </Content>
+          <Content>
+              <Todo />
+          </Content>
         <Footer />
       </div>
     );

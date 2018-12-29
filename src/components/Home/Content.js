@@ -8,7 +8,7 @@ const Content = ({ children }) => (
 )
 
 Content.propTypes = {
-    childern: PropTypes.element.isRequired
+    childern: PropTypes.element
 }
 
 export default Content

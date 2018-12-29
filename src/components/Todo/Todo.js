@@ -61,20 +61,35 @@ handleOnSubmit = e => {
     }
 }
 
+// Esta implementação está gerando uma duplicação de item quando marcado como completo
 markAsCompleted = id => {
     // Procura a tarefa pelo id
-    const taskFound = this.state.items.find(task => task.id === id)
+    const taskFound = this.state.items.find(task => task.id === id)  
+        
     if(taskFound){
-        // Altere status completed para true
-        taskFound.completed = true
+        // Altere status completed para true        
+        taskFound.completed = true  
+
         // Atualiza a lista de itens
         this.setState({
             items:[
-                ...this.state.items,
-                ...taskFound
+                ...this.state.items
             ]
         })
     }    
+}
+// Implementação alternativa feita por mim
+markAsCompletedMy = id => {
+    const itensUpdated = this.state.items.map( item => {
+        if(item.id === id){
+            return Object.assign({}, item, {
+                completed: true
+            })
+        }
+        return item
+    })
+
+    this.setState({items: itensUpdated})
 }
 
 removeTask = id => {
@@ -96,7 +111,6 @@ removeTask = id => {
                 value={this.state.task}
                 onChange={this.handleOnChange}
             />
-            <button type="submit">Enviar</button>
         </form>
 
         <List
