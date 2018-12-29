@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import Home from './Home/Home';
 import Header from '../shared/component/layout/Header';
 import Content from './Home/Content';
 import Footer from '../shared/component/layout/Footer';
+import Todo from './Todo/Todo';
 
 class App extends Component {
   render() {
@@ -11,7 +11,7 @@ class App extends Component {
       <div className="App">
         <Header title="Welcome to Codejobs" url=""/>
         <Content>
-            <Home />
+            <Todo />
         </Content>
         <Footer />
       </div>

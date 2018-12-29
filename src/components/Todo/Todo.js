@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import List from './List';
 import './Todo.css'
 
 export default class Todo extends Component {
@@ -34,7 +35,7 @@ componentWillMount(){
     });
 }
 
-handleOnChange = (e) => {
+handleOnChange = e => {
     const {target: {value} } = e
 
     this.setState({
@@ -42,9 +43,7 @@ handleOnChange = (e) => {
     })
 }
 
-handleOnSubmit = (e) => {
-    console.log(this.state.items);
-    
+handleOnSubmit = e => {    
     e.preventDefault()
     // Adiconar o novo valor digitado no variavel de estado
     if(this.state.task.trim() !== ''){
@@ -58,17 +57,13 @@ handleOnSubmit = (e) => {
                     completed: false
                 }
             ]
-        })
-        
-
-    console.log('Depois do update');
-    console.log(this.state.items);
+        })        
     }
 }
 
-markAsCompleted = (id) => {
+markAsCompleted = id => {
     // Procura a tarefa pelo id
-    const taskFound = this.state.items.find(task => task.id == id)
+    const taskFound = this.state.items.find(task => task.id === id)
     if(taskFound){
         // Altere status completed para true
         taskFound.completed = true
@@ -82,7 +77,7 @@ markAsCompleted = (id) => {
     }    
 }
 
-removeTask = (id) => {
+removeTask = id => {
     const filterdTasks = this.state.items.filter( task => task.id  !== id)
 
     this.setState({
