@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import List from './List';
 import './Todo.css'
 
+const keyStorage = '@tasks'
+
 export default class Todo extends Component {
 
     constructor(){
@@ -15,23 +17,7 @@ export default class Todo extends Component {
 
 componentWillMount(){
     this.setState({
-        items: [
-            {
-                id: 34,
-                task: 'Pay the rent',
-                completed: false
-            },
-            {
-                id: 35,
-                task: 'Go to the gym',
-                completed: false
-            },
-            {
-                id: 36,
-                task: 'Do my homework',
-                completed: false
-            }
-        ]
+        items: JSON.parse(localStorage.getItem(keyStorage)) || []
     });
 }
 
@@ -47,17 +33,22 @@ handleOnSubmit = e => {
     e.preventDefault()
     // Adiconar o novo valor digitado no variavel de estado
     if(this.state.task.trim() !== ''){
-        this.setState({
-            task:'',
-            items:[
+        const id = this.state.items.length > 0 ? this.state.items[this.state.items.length -1].id + 1 : 0
+        localStorage.setItem(keyStorage, JSON.stringify(
+            [
                 ...this.state.items,                
                 {
-                    id: this.state.items[this.state.items.length -1].id + 1,
+                    id: id,
                     task: this.state.task,
                     completed: false
                 }
             ]
-        })        
+        ))
+        
+        this.setState({
+            task:'',
+            items:JSON.parse(localStorage.getItem(keyStorage))
+        }) 
     }
 }
 
