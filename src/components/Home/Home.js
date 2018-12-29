@@ -1,5 +1,6 @@
 import React from 'react'
 import './Home.css'
+import Todo from '../Todo/Todo';
 
 class Home extends React.Component{
     constructor(){
@@ -27,6 +28,7 @@ class Home extends React.Component{
         return (
             <div className="Home">
                 <p> Hi my name is {this.state.name}</p>
+                <Todo />
             </div>
         )
     }
