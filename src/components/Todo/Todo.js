@@ -52,7 +52,7 @@ handleOnSubmit = e => {
             items:[
                 ...this.state.items,                
                 {
-                    id: 37,
+                    id: this.state.items[this.state.items.length -1].id + 1,
                     task: this.state.task,
                     completed: false
                 }
@@ -79,7 +79,7 @@ markAsCompleted = id => {
     }    
 }
 // Implementação alternativa feita por mim
-markAsCompletedMy = id => {
+markAsCompleted2 = id => {    
     const itensUpdated = this.state.items.map( item => {
         if(item.id === id){
             return Object.assign({}, item, {
