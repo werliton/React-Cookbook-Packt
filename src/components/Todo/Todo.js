@@ -82,6 +82,15 @@ markAsCompleted = (id) => {
     }    
 }
 
+removeTask = (id) => {
+    const filterdTasks = this.state.items.filter( task => task.id  !== id)
+
+    this.setState({
+        items: filterdTasks
+    })
+
+}
+
   render() {
     return (
       <div className="Todo">
