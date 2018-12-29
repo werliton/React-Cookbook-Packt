@@ -14,12 +14,16 @@ class Home extends React.Component{
             this.setState({
                 name:'João Miguel'
             })
-        }, 10000)
+        }, 5000)
     }
 
-    render(){
-
+    componentDidMount(){
         this._updateName()
+    }
+
+  
+    render(){console.log('Name:', this.state.name);
+
         return (
             <div className="Home">
                 <p> Hi my name is {this.state.name}</p>
