@@ -57,7 +57,7 @@ export default class Timer extends Component{
                 message: 'Taking a Long Break!'
             }
         })
-        return this.setTimeForWork(this.times.longBreak)
+        return this.setTime(this.times.longBreak)
     }
 
     setTime = newTime => {
@@ -95,7 +95,7 @@ export default class Timer extends Component{
         const m = Math.floor(seconds % 3600 / 60)
         const s = Math.floor(seconds % 3600 % 60)
 
-        return `${m < 10 ? '0': ''}${m}:${s < 10 ? '0' :''}`
+        return `${m < 10 ? '0': ''}${m}:${s < 10 ? '0' :''}${s}`
     }
 
     render() {
