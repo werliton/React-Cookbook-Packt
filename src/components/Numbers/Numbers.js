@@ -15,7 +15,7 @@ export default class Numbers extends Component {
         const numbers = Array.from(value)
         // Soma todos os valores do array
         const results = numbers.reduce((a,b) => Number(a) + Number(b))
-        
+
         this.setState({
             numbers: value,
             results: [...this.state.results, results]
