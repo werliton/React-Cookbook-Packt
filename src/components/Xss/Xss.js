@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import serialize from 'serialize-javascript';
 // Let's suppose this response is coming from a service and have
 // some XSS attacks in the content...
 const response = [
@@ -25,7 +26,10 @@ const response = [
 ];
 // Let's suppose this is ourinitialState of Redux
 // which is injected to the DOM...
-const initialState = JSON.stringify(response);
+const secureInitialState = serialize(response);
+// const insecureInitialState = JSON.stringify(response);
+console.log(secureInitialState);
+
 
 const removeXSSAttacks = html => {
     const SCRIPT_REGEX = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*</
@@ -43,7 +47,9 @@ const removeXSSAttacks = html => {
 class Xss extends Component {
     render() {
     // Parsing the JSON string to an actual object...
-    const posts = JSON.parse(initialState);
+    const posts = JSON.parse(secureInitialState);
+    console.log(posts);
+    
     // Rendering our posts...
     return (
         <div className="Xss">
