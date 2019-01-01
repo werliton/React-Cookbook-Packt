@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Content from './Home/Content';
 import Footer from '../shared/component/layout/Footer'; 
-import Xss from './Xss/Xss';
+import Helmet from 'react-helmet'
 
 class App extends Component {
 
@@ -10,7 +10,13 @@ class App extends Component {
     return (
       <div className="App">
           <Content>
-            <Xss />
+            <Helmet 
+              title="Título usando Helmet"
+              meta={[
+                { name:'title', content:'Título usando Helmet'},
+                { name:'description', content:'Esta receita é sobre atualizar titulo usando esse pacote Helmet'},
+              ]}
+              />
           </Content>
         <Footer />
       </div>

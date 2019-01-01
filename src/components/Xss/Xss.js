@@ -48,7 +48,6 @@ class Xss extends Component {
     render() {
     // Parsing the JSON string to an actual object...
     const posts = JSON.parse(secureInitialState);
-    console.log(posts);
     
     // Rendering our posts...
     return (
