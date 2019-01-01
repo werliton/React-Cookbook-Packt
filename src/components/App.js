@@ -1,27 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import Content from './Home/Content';
 import Footer from '../shared/component/layout/Footer'; 
 import Helmet from 'react-helmet'
+import PropTypes from 'prop-types'
 
-class App extends Component {
-
-  render() {
-    return (
-      <div className="App">
-          <Content>
-            <Helmet 
-              title="Título usando Helmet"
-              meta={[
-                { name:'title', content:'Título usando Helmet'},
-                { name:'description', content:'Esta receita é sobre atualizar titulo usando esse pacote Helmet'},
-              ]}
-              />
-          </Content>
-        <Footer />
-      </div>
-    );
-  }
+const App = ({children}) =>(
+<div className="App">
+      <Helmet 
+        title="Routing"
+        />
+      <Content>
+          {children}
+      </Content>
+    <Footer />
+  </div>
+) 
+App.propTypes = {
+  children: PropTypes.element
 }
-
 export default App;
