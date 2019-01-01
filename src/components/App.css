@@ -22,6 +22,23 @@
   color: #61dafb;
 }
 
+.App-header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  }
+  .App-header ul li {
+  display: inline-block;
+  padding: 0 10px;
+  }
+  .App-header ul li a {
+  color: #fff;
+  text-decoration: none;
+  }
+  .App-header ul li a:hover {
+  color: #ccc;
+  }
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
