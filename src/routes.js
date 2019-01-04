@@ -8,6 +8,7 @@ import Home from './components/Home'
 import Contact from './components/Contact'
 import About from './components/About'
 import Notes from './components/Notes';
+import Coins from './components/Coins/';
 
 const AppRoutes = ()=> (
     <App>
@@ -15,6 +16,7 @@ const AppRoutes = ()=> (
             <Route path='/' component={Home} exact/>            
             <Route path='/about' component={About} exact/>
             <Route path='/contact' component={Contact} exact/>
+            <Route path='/coins' component={Coins} exact/>
             <Route path='/notes' component={Notes} exact/>
             <Route path='/notes/:noteId' component={Notes} exact/>
             <Route component={Error404}/>

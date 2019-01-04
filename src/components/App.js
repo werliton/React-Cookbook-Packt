@@ -11,7 +11,7 @@ const App = ({children}) =>(
       <Helmet 
         title="Routing"
         />
-      <Header />
+      <Header title="Segue o jogo"/>
       <Content>
           {children}
       </Content>
