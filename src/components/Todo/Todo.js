@@ -59,12 +59,13 @@ markAsCompleted = id => {
         
     if(taskFound){
         // Altere status completed para true        
-        taskFound.completed = true  
+        //taskFound.completed = true  
 
         // Atualiza a lista de itens
         this.setState({
             items:[
-                ...this.state.items
+                ...this.state.items,
+                ...taskFound
             ]
         })
     }    

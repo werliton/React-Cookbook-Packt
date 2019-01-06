@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 
 const Home = props => {
      const { isMobile} = props   
-     console.log(props);
      
     return(
         <div className="Home">

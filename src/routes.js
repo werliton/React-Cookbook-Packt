@@ -9,12 +9,14 @@ import Contact from './components/Contact'
 import About from './components/About'
 import Notes from './components/Notes';
 import Coins from './components/Coins/';
+import Todo from './components/Todo/Todo';
 
 const AppRoutes = ()=> (
     <App>
         <Switch>
             <Route path='/' component={Home} exact/>            
-            <Route path='/about' component={About} exact/>
+            <Route path='/about' component={About} exact/>   
+            <Route path='/todo' component={Todo} exact/>
             <Route path='/contact' component={Contact} exact/>
             <Route path='/coins' component={Coins} exact/>
             <Route path='/notes' component={Notes} exact/>
