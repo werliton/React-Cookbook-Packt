@@ -8,7 +8,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators(
-    { fetchPhrases },
+    { fetchPhrases, addPhrase },
     dispatch
 )
 
