@@ -11,14 +11,14 @@ const List = props => (
                         onClick={() => props.markAsCompleted(item.id)}
                     >
                         <i className="fa fa-check"></i>
-                        <a href="#">Complete</a>
+                        <a href="#ok">Complete</a>
                     </span>
 
                     <span className='trash'
                         onClick={() => props.removeTask(item.id)}
                     >
                         <i className="fa fa-trash"></i>
-                        <a href="#">Remove</a>
+                        <a href="#ok">Remove</a>
                     </span>
                 </div>
             </li>

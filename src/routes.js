@@ -10,6 +10,7 @@ import About from './components/About'
 import Notes from './components/Notes';
 import Coins from './components/Coins/';
 import Todo from './components/Todo/Todo';
+import PhrasesContainer from './components/Phrase/';
 
 const AppRoutes = ()=> (
     <App>
@@ -21,6 +22,7 @@ const AppRoutes = ()=> (
             <Route path='/coins' component={Coins} exact/>
             <Route path='/notes' component={Notes} exact/>
             <Route path='/notes/:noteId' component={Notes} exact/>
+            <Route path='/phrases' component={PhrasesContainer} exact/>
             <Route component={Error404}/>
         </Switch>
     </App>

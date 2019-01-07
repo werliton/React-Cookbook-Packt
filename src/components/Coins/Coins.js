@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { array } from 'prop-types'
+//import { array } from 'prop-types'
 import './Coins.css'
 
-import { isFirstRender } from '../../shared/utils/frontend'
+//import { isFirstRender } from '../../shared/utils/frontend'
 
 export default class Coins extends Component {
     static propTypes = {

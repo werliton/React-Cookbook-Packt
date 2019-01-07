@@ -9,6 +9,7 @@ import {
 import { request, received, error } from '../shared/redux/baseActions'
 
 export const fetchCoins = () => dispatch => {
+
     // Dispatching our request action
     dispatch(request(FETCH_COINS_REQUEST))
 
