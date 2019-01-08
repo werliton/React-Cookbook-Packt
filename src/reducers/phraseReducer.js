@@ -1,4 +1,4 @@
-import { FETCH_PHRASE_SUCCESS } from "../actions/actionTypes";
+import { FETCH_PHRASE_SUCCESS, DELETE_PHRASE_SUCCESS } from "../actions/actionTypes";
 import { getNewState } from '../shared/utils/frontend'
 
 const INITIALSTATE = {
@@ -14,6 +14,17 @@ const phraseReducer = (state = INITIALSTATE, action) => {
 
             return getNewState(state, {
                 phrases: newPhrases
+            })
+        }
+        case DELETE_PHRASE_SUCCESS:{
+            const { payload: deletePhrase } = action
+
+            const filteredPhrases = state.phrases.filter(
+                phrase => phrase.key !== deletePhrase.key
+            )
+
+            return getNewState(state, {
+                phrases: filteredPhrases
             })
         }
         default:

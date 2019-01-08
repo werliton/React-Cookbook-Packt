@@ -10,6 +10,10 @@ export default class PhrasesContainer extends React.Component {
         this.props.addPhrase('Testing insert into firebase', 'Letox')
     }
 
+    _remove = (key) => {
+        this.props.deletePhrase(key)
+    }
+
     render() {
 
         const { phrases } = this.props
@@ -19,7 +23,9 @@ export default class PhrasesContainer extends React.Component {
                 <ul>
                     {
                         phrases.map(phrase =>
-                            <li key={phrase.key}>Author: {phrase.author} - {phrase.phrase}</li>
+                            <li key={phrase.key}>Author: {phrase.author} - {phrase.phrase}
+                                <button onClick={() => this._remove(phrase.key)}>Delete</button>
+                            </li>
                         )
                     }
                 </ul>
